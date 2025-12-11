@@ -1,0 +1,16 @@
+.content,div {
+    display: flex;              /* აცხადებს flex კონტეინერს */
+    flex-direction: column;        /* ელემენტები ჰორიზონტალურად დგება (default-იც ესაა) */
+    justify-content: space-between; /* თანაბარი განაწილება */
+    align-items: center;        /* ვერტიკალური ცენტრი */
+    padding: 10px;
+}
+
+
+.header,div {
+    display: flex;              /* აცხადებს flex კონტეინერს */
+    flex-direction: row;        /* ელემენტები ჰორიზონტალურად დგება (default-იც ესაა) */
+    justify-content: space-between; /* თანაბარი განაწილება */
+    align-items: center;        /* ვერტიკალური ცენტრი */
+    padding: 10px;
+}
