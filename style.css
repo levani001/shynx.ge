@@ -1,3 +1,12 @@
+.beta {
+    background: linear-gradient(90deg, #ff3c00, #ff6a00);
+    color: #fff;
+    padding: 10px 16px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+
 .content,div {
     display: flex;              /* აცხადებს flex კონტეინერს */
     flex-direction: column;        /* ელემენტები ჰორიზონტალურად დგება (default-იც ესაა) */
@@ -13,4 +22,37 @@
     justify-content: space-between; /* თანაბარი განაწილება */
     align-items: center;        /* ვერტიკალური ცენტრი */
     padding: 10px;
+}
+
+.logo, img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.footer {
+    background: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 25px;
+}
+
+.contacts {
+    margin: 10px 0;
+}
+
+.contacts a {
+    color: #000000;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contacts a:hover {
+    text-decoration: underline;
+}
+
+.copy {
+    font-size: 13px;
+    opacity: 0.8;
 }
