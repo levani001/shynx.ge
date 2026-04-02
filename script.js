@@ -1,28 +1,34 @@
-// Smooth scrolling functionality
-$('a[href^="#"]').on('click', function(event) {
-  event.preventDefault();
-  const target = $(this).attr('href');
-  $('html, body').animate({
-    scrollTop: $(target).offset().top
-  }, 1000);
-});
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-// Animation for ribbon flowers
-$(document).ready(function() {
-  $('.ribbon-flower').hide().fadeIn(1000);
-});
+        // Simple animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
 
-// Additional animation for when flowers are hovered
-$('.ribbon-flower').hover( 
-  function() { 
-      $(this).animate({
-          opacity: 0.7,
-          bottom: '+=10px'
-      }, 200);
-  }, function() {
-      $(this).animate({
-          opacity: 1,
-          bottom: '-=10px'
-      }, 200);
-  }
-);
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
